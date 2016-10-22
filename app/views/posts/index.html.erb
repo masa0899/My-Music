@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+<p><%= post.song_title %>  <%= post.singer %></p>
+<p><%= post.text %></p>
+<div iframe-content>
+<!-- <div class="embed-responsive embed-responsive-4by3"> -->
+  <iframe class="embed-responsive-item" src="<%= post.youtube_url %>"></iframe>
+</div>
+</div>
+<% end %>
