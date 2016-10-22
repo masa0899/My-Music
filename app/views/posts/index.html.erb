@@ -1,4 +1,5 @@
 <% @posts.each do |post| %>
+<p><%= post.user.nickname %>さん</p>
 <p>曲名：<%= post.song_title %>      &nbsp;アーティスト名：<%= post.singer %></p>
 <p><%= post.text %></p>
 <div iframe-content>
