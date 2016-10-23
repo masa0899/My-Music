@@ -18,6 +18,11 @@
 .grid-6{
   text-align: right;
 }
+
+.grid-10{
+  float: left;
+}
+
 .navbar-brand{
   color: white;
 }

@@ -1,9 +1,9 @@
 <% @posts.each do |post| %>
+<div class="grid-10">
 <p><%= post.user.nickname %>さん</p>
-<p>曲名：<%= post.song_title %>      &nbsp;アーティスト名：<%= post.singer %></p>
+<p>曲名：<%= post.song_title %><br>アーティスト名：<%= post.singer %></p>
 <p><%= post.text %></p>
 <div iframe-content>
-<!-- <div class="embed-responsive embed-responsive-4by3"> -->
   <iframe class="embed-responsive-item" src="<%= post.youtube_url %>"></iframe>
 </div>
 </div>
