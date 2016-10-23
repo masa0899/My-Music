@@ -15,6 +15,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    if post.user_id == current_user.id
+      post.destroy
+    end
+  end
+
   private
   def post_params
     params.permit(:song_title, :singer, :youtube_url, :text)
