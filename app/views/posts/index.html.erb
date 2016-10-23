@@ -1,10 +1,13 @@
 <% @posts.each do |post| %>
 <div class="grid-10">
+<div class="thumbnail">
 <p><%= post.user.nickname %>さん</p>
 <p>曲名：<%= post.song_title %><br>アーティスト名：<%= post.singer %></p>
-<p><%= post.text %></p>
 <div iframe-content>
   <iframe class="embed-responsive-item" src="<%= post.youtube_url %>"></iframe>
+</div>
+<p><%= post.text %></p>
+<%= link_to '詳細', "/posts/#{post.id}" %>
 </div>
 </div>
 <% end %>
