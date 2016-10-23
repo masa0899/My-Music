@@ -8,6 +8,7 @@
 </div>
 <p><%= post.text %></p>
 <% if user_signed_in? && post.user_id == current_user.id %>
+<%= link_to '編集', "/posts/#{post.id}/edit" %>
  <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
 <% end %>
 <%= link_to '詳細', "/posts/#{post.id}" %>
