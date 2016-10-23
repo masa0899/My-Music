@@ -14,6 +14,10 @@
  *= require_tree .
  *= require_self
  */
+/*ログイン画面*/
+.enter{
+  text-align: center;
+}
 
 .thumbnail{
   margin-left: 50px;
@@ -30,9 +34,7 @@
 .navbar-brand{
   color: white;
 }
-/*header{
-  background-color: white;
-}*/
+
  body,html{
    background-color: gray;
    height: 100%;
