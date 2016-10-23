@@ -7,7 +7,7 @@
   <iframe class="embed-responsive-item" src="<%= post.youtube_url %>"></iframe>
 </div>
 <p><%= post.text %></p>
-<% if post.user_id == current_user.id %>
+<% if user_signed_in? && post.user_id == current_user.id %>
  <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
 <% end %>
 <%= link_to '詳細', "/posts/#{post.id}" %>
