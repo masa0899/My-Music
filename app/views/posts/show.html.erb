@@ -6,3 +6,20 @@
 </div>
 <p><%= @post.text %></p>
 </div>
+
+<% if current_user %>
+  <%= form_tag("/posts/#{@post.id}/comments", method: :post) do %>
+  <textarea cols="30" name="comment" placeholder="コメントする" rows="2"></textarea>
+       <input type="submit" value="SENT">
+     <% end %>
+   <% end %>
+
+   <h4>＜コメント一覧＞</h4>
+     <% if @comments %>
+       <% @comments.each do |comment| %>
+         <p>
+           <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+           <%= comment.comment %>
+         </p>
+       <% end %>
+     <% end %>
