@@ -1,0 +1,7 @@
+<% flash.each do |key, value| %>
+<%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
+<%= form_tag search_movie_posts_path do %>
+<%= text_field_tag :search_word, @search_word %>
+<%= submit_tag "search" %>
+<% end %>
