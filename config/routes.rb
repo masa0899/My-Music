@@ -12,5 +12,5 @@ Rails.application.routes.draw do
       delete 'unlike' => 'likes#destroy'
     end
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
 end

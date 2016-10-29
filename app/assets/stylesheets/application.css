@@ -16,6 +16,20 @@
  */
 /*ログイン画面*/
 
+.image-show{
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  background-position: center;
+}
+
+.image{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  background-position: center;
+}
+
 .enter{
   text-align: center;
 }
