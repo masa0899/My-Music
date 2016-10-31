@@ -8,18 +8,18 @@
 </head>
 <body>
   <header>
-    <h1>MY MUSIC</h1>
+    <ul>
+    <li><h1>MY MUSIC</h1></li>
     <% if user_signed_in? %>
-     <div class="grid-6">
-           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-           <a class="post" href="/posts/new">投稿する</a>
-     </div>
+           <li class="grid-6"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+           <li class="grid-6"><a class="post" href="/posts/new">投稿する</a></li>
     <% else %>
       <div class="grid-6">
             <%= link_to "ログイン", new_user_session_path, class: 'post' %>
             <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
       </div>
     <% end %>
+  </ul>
   </header>
   <% if user_signed_in? %>
   <nav class="navbar navbar-inverse sidebar" role="navigation">
@@ -38,46 +38,16 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><%= link_to "my profile", user_path(current_user) %><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></li>
-				<li ><a href="/posts/search">Search<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-				<!-- <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
-					<ul class="dropdown-menu forAnimate" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
-					<ul class="dropdown-menu forAnimate" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
-				</li> -->
+				<li class="active"><a href="/"><span style="font-size:40px;" class="pull-center hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li ><a href=<%= user_path(current_user) %>><span style="font-size:40px;" class="pull-center hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+				<li ><a href="/posts/search"><span style="font-size:40px;" class="pull-center hidden-xs showopacity glyphicon glyphicon-search"></span></a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
 <% end %>
 <div class="main">
- <!-- <div class="right-content">
- </div> -->
+ <%= yield %>
 </div>
-<%= yield %>
-
 </body>
 </html>

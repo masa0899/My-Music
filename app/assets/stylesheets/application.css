@@ -11,10 +11,20 @@
  * file per style scope.
  *
  *= require bootstrap
+ *= require bootstrap_override
  *= require_tree .
  *= require_self
  */
 /*ログイン画面*/
+
+
+header{
+  background-color: white;
+}
+header li{
+  display: inline-block;
+  margin: 20px;
+}
 
 .image-show{
   border-radius: 50%;
@@ -36,10 +46,6 @@
 
 .thumbnail{
   margin-left: 50px;
-}
-
-.grid-6{
-  text-align: right;
 }
 
 .grid-10{
@@ -73,12 +79,12 @@
    border-radius: 0px;
  }
 
- nav.sidebar, .main{
+ /*nav.sidebar, .main{
    -webkit-transition: margin 200ms ease-out;
      -moz-transition: margin 200ms ease-out;
      -o-transition: margin 200ms ease-out;
      transition: margin 200ms ease-out;
- }
+ }*/
 
  /* Add gap to nav and right windows.*/
  .main{
@@ -137,8 +143,8 @@
      margin-top: 0;
      background-color: transparent;
      border: 0;
-     -webkit-box-shadow: none;
-     box-shadow: none;
+     /*-webkit-box-shadow: none;
+     box-shadow: none;*/
    }
 
    /*allows nav box to use 100% width*/
@@ -153,7 +159,7 @@
 
    /*gives sidebar width/height*/
    nav.sidebar{
-     width: 200px;
+     width: 100px;
      height: 100%;
      margin-left: -160px;
      float: left;
@@ -164,6 +170,7 @@
    /*give sidebar 100% width;*/
    nav.sidebar li {
      width: 100%;
+     height: 75px;
    }
 
    /* Move nav to full on mouse over*/
