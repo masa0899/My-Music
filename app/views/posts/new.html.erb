@@ -7,8 +7,9 @@
       <li><input placeholder="曲名" type="string" name="song_title"></li>
       <li><input placeholder="歌手" type="string" name="singer"></li>
       <li><%= link_to '曲を探す', "/posts/search" %></li>
-      <li><input id="url" placeholder="Youtube Url" type="text" name="youtube_url"></li>
-      <div id="emcode"></div>
+      <li><input id="url" placeholder="Youtube Url" type="text"></li>
+      <!-- <div id="emcode"></div> -->
+      <li><input id="emcode" type="text" name="youtube_url" value=""/></li>
       <div id="video"></div>
       <li><textarea cols="30" name="text" placeholder="text" rows="10"></textarea></li>
       <li><input type="submit" value="SENT"></li>
@@ -32,7 +33,7 @@
     //replace
     var replace = youtubeurl.replace(youtubeurl, iframeurl);
     var emcode = document.getElementById('emcode');
-    emcode.innerHTML = replace
+    $('#emcode').val(replace);
     //create iframe
     var iframe = document.createElement('iframe');
     //create src
