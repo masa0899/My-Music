@@ -1,5 +1,5 @@
 
-    <p><%= @nickname %>さんの投稿一覧</p>
+    <p class="nickname"><%= @nickname %>さんの投稿一覧</p>
     <div class="image-show" style="background-image: url(<%= @user.avatar.url(:medium) %>);"></div>
  <% if current_user.id ==  @user.id %>
      <div class="profile_edit">
