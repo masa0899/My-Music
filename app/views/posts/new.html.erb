@@ -6,9 +6,40 @@
       <ul>
       <li><input placeholder="曲名" type="string" name="song_title"></li>
       <li><input placeholder="歌手" type="string" name="singer"></li>
-      <li><input placeholder="Youtube Url" type="text" name="youtube_url"></li>
+      <li><%= link_to '曲を探す', "/posts/search" %></li>
+      <li><input id="url" placeholder="Youtube Url" type="text" name="youtube_url"></li>
+      <div id="emcode"></div>
+      <div id="video"></div>
       <li><textarea cols="30" name="text" placeholder="text" rows="10"></textarea></li>
       <li><input type="submit" value="SENT"></li>
     </ul>
 <% end %>
 </div>
+
+<script>
+// document.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('url').addEventListener('change', function(){
+    // get id=url
+    var url = document.getElementById('url');
+    var youtubeurl = url.value
+    //regular expression
+    var p = /[/?=]([-\w]{11})/;
+    var result = youtubeurl.match(p);
+    var results = result[0];
+    var r = /[^=]{11}/;
+    var allresult = results.match(r);
+    var iframeurl = "https://www.youtube.com/embed/" + allresult[0];
+    //replace
+    var replace = youtubeurl.replace(youtubeurl, iframeurl);
+    var emcode = document.getElementById('emcode');
+    emcode.innerHTML = replace;
+    //create iframe
+    var iframe = document.createElement('iframe');
+    //create src
+    iframe.src= iframeurl;
+    //get id=video
+    var video = document.getElementById('video');
+    video.appendChild(iframe);
+  }, false);
+// }, false);
+</script>
