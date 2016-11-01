@@ -1,3 +1,4 @@
+<body class="post-view">
 <div class="enter">
 <%= form_tag('/posts', method: :post) do %>
       <h3>
@@ -9,9 +10,9 @@
       <li><%= link_to '曲を探す', "/posts/search" %></li>
       <li><input id="url" placeholder="Youtube Url" type="text"></li>
       <!-- <div id="emcode"></div> -->
-      <li><input id="emcode" type="text" name="youtube_url" placeholder="入力する必要はなし" value=""/></li>
+      <li><input id="emcode" type="text" name="youtube_url" placeholder="入力する必要はありません" value=""/></li>
       <div id="video"></div>
-      <li><textarea cols="30" name="text" placeholder="text" rows="10"></textarea></li>
+      <li><textarea cols="30" name="text" placeholder="コメント" rows="10"></textarea></li>
       <li><input type="submit" value="SENT"></li>
     </ul>
 <% end %>
@@ -44,3 +45,4 @@
   }, false);
 // }, false);
 </script>
+</body>

@@ -1,10 +1,11 @@
-
-    <p class="nickname"><%= @nickname %>さんの投稿一覧</p>
+<div class="my-profile">
+    <h2 class="nickname"><%= @nickname %>さんの投稿一覧</h2>
     <div class="image-show" style="background-image: url(<%= @user.avatar.url(:medium) %>);"></div>
  <% if current_user.id ==  @user.id %>
      <div class="profile_edit">
        <%= link_to 'プロフィール編集', edit_user_path(current_user), {:class => 'btn btn-primary withripple' }%>
       </div>
+    </div>
     <% end %>
     <% @posts.each do |post| %>
     <div class="grid-10">

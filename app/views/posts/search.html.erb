@@ -4,9 +4,11 @@
 <% flash.each do |key, value| %>
 <%= content_tag(:div, value, class: "#{key}") %>
 <% end %>
+<ul>
 <%= form_tag search_movie_posts_path do %>
-<%= text_field_tag :search_word, @search_word %>
-<%= submit_tag "search" %>
+<li><%= text_field_tag :search_word, @search_word %></li>
+<li><%= submit_tag "search" %></li>
 <% end %>
+</ul>
 </div>
 </body>

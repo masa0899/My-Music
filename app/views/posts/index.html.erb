@@ -1,3 +1,4 @@
+<body class="index">
 <% @posts.each_with_index do |post, i| %>
   <div class="grid-10">
   <div class="thumbnail">
@@ -18,7 +19,7 @@
   </div>
   <p><%= post.text %></p>
 
-  <%= render partial: "likes/like", locals: { post: post, i: i} %>
+  <!-- <%= render partial: "likes/like", locals: { post: post, i: i} %> -->
 
 
   <% if user_signed_in? && post.user_id == current_user.id %>
@@ -30,3 +31,4 @@
   </div>
 <% end %>
 <%= paginate(@posts) %>
+</body>

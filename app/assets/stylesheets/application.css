@@ -16,6 +16,83 @@
  *= require_self
  */
 /*ログイン画面*/
+.show{
+  width: 800px;
+}
+
+.finish{
+  text-align: center;
+  margin-top: 50px;
+}
+
+input{
+  width: 300px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+textarea{
+  width: 300px;
+}
+
+.post-view{
+  background-image: url(http://static.bnr.bg/gallery/4c/4c484236adc8aa922bf4019a074ea929.jpg);
+  background-position: center center;
+
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: #464646;
+}
+
+ul{
+  list-style: none;
+}
+
+.my-profile{
+  background-image: url(https://wordpress.com/wp-content/themes/a8c/verticals/music/images/header.jpg?m=1351292325h);
+  width: 1050px;
+  margin: 0 auto;
+  padding: 10px;
+  background-size: cover;
+  margin-right: 130px;
+}
+
+.index{
+  background-image: url(http://cdn.mysitemyway.com/etc-mysitemyway/webtreats/assets/posts/1098/full/seamless-paper-patterns-6.jpg);
+  background-attachment:
+}
+
+.title{
+  text-align: center;
+  margin-right: 300px;
+  margin-top: 50px;
+}
+
+.new{
+  background-image: url(http://static.bnr.bg/gallery/4c/4c484236adc8aa922bf4019a074ea929.jpg);
+  background-position: center center;
+
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: #464646;
+}
+
 .music{
   color: white;
   font-weight: 900;
@@ -59,10 +136,11 @@
 .search{
   text-align: center;
   margin-top: 300px;
+  margin-right: 250px;
 }
 
 header{
-  background-color: white;
+  background-image: url(http://cdn1.theodysseyonline.com/files/2016/01/25/6358928084064937911009796574_concert.jpg);
 }
 header li{
   display: inline-block;
@@ -85,6 +163,8 @@ header li{
 
 .enter{
   text-align: center;
+  margin-top: 100px;
+  margin-right: 300px;
 }
 
 .thumbnail{
@@ -107,7 +187,7 @@ header li{
 
  body,html{
    background-color: gray;
-   height: 100%;
+   height: 1030px;
    font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
  }
 
@@ -204,7 +284,7 @@ header li{
    /*gives sidebar width/height*/
    nav.sidebar{
      width: 100px;
-     height: 100%;
+     height: 940px;
      margin-left: -160px;
      float: left;
      z-index: 8000;

@@ -1,7 +1,7 @@
 <h1>ビデオ - <%= link_to '投稿画面に戻る', "/posts/new" %></h1>
   <% @videos.each_with_index do |video, i| %>
   <div class="grid-22">
-    <div class="thumbnail">
+    <div class="thumbnail" style="width: 330px;">
   <p><%= video.snippet.title %></p>
   <div id="console_log<%= i %>"></div>
   <div iframe-content>
