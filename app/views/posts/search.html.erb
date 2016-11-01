@@ -1,4 +1,6 @@
+<body class="view">
 <div class="search">
+  <h1 class="music">お気に入りの音楽を見つけよう！</h1>
 <% flash.each do |key, value| %>
 <%= content_tag(:div, value, class: "#{key}") %>
 <% end %>
@@ -7,3 +9,4 @@
 <%= submit_tag "search" %>
 <% end %>
 </div>
+</body>
