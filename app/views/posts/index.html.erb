@@ -44,24 +44,24 @@ function like_function(button, heart, heart_count, post_id){
     $.ajax({
       url: "/posts/" + post_id + "/unlike",
       type: "delete",
-      data: {post_id: post_id}
+      data: {post_id: post_id, datatype: "json"}
     })
     .done(function(data){
       button.removeClass("decrement").addClass("increament")
       heart.attr("src", "/assets/icon_heart.svg")
-      heart_count.text(data)
+      heart_count.text(data["counts"]);
     });
     return false;
   }else{
     $.ajax({
       url: "/posts/" + post_id + "/like",
       type: "post",
-      data: {post_id: post_id}
+      data: {post_id: post_id, datatype: "json"}
     })
     .done(function(data){
       button.removeClass("increment").addClass("decrement")
       heart.attr("src", "/assets/icon_red_heart.svg")
-      heart_count.text(data)
+      heart_count.text(data["counts"]);
     });
     return false;
   }
