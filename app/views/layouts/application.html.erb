@@ -9,41 +9,16 @@
 <body>
   <header>
     <ul>
-    <li><h1>MY MUSIC</h1></li>
+    <li><a href="/"><%= image_tag("My Music-logo.png", :class => "logo") %></a></li>
     <% if user_signed_in? %>
-           <li class="grid-6"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-           <li class="grid-6"><a class="post" href="/posts/new">投稿する</a></li>
+           <li class="grid-6"><button type="button" class="btn btn-secondary"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button></li>
+           <li class="grid-6"><button type="button" class="btn btn-secondary"><a class="post" href="/posts/new">投稿する</a></button></li>
     <% else %>
-            <li class="grid-6"><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
-            <li class="grid-6"><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+            <li class="grid-6"><button type="button" class="btn btn-secondary"><%= link_to "ログイン", new_user_session_path, class: 'post' %></button></li>
+            <li class="grid-6"><button type="button" class="btn btn-secondary"><%= link_to "新規登録", new_user_registration_path, class: 'post' %></button></li>
     <% end %>
   </ul>
   </header>
-  <% if user_signed_in? %>
-  <nav class="navbar navbar-inverse sidebar" role="navigation">
-    <div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<div class="navbar-brand">Menu</div>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="/"><span style="font-size:40px;" class="pull-center hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-        <li ><a href=<%= user_path(current_user) %>><span style="font-size:40px;" class="pull-center hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="/posts/search"><span style="font-size:40px;" class="pull-center hidden-xs showopacity glyphicon glyphicon-search"></span></a></li>
-			</ul>
-		</div>
-	</div>
-</nav>
-<% end %>
 <div class="main">
  <%= yield %>
 </div>

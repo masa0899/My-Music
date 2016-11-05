@@ -16,6 +16,80 @@
  *= require_self
  */
 /*ログイン画面*/
+.search_result{
+  margin-top: 200px;
+}
+
+.left-content{
+  margin-top: 125px;
+  position: fixed;
+  left: 0px;
+}
+
+.post-frame{
+  width: 325px;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  float: left;
+}
+
+header{
+  background-color: gray;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.lefnav{
+  margin-top: 80px;
+}
+
+.navgation{
+  margin: 30px;
+}
+
+.right-content{
+  width: 300px;
+  float: right;
+  background-color: white;
+  height: 1000px;
+  margin-top: 176px;
+  position: fixed;
+  right: 20px;
+}
+
+.center-content{
+  width: 700px;
+  float: right;
+  margin-right: 400px;
+  margin-top: 150px;
+  position: static;
+}
+
+.thumbnail-content{
+  width: 325px;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+footer{
+   bottom: 10px;
+   width: 100%;
+   margin-left: 350px;
+}
+
+
+
+.logo{
+  width: 80%;
+  height: 80%;
+}
+
 .show{
   width: 800px;
 }
@@ -62,18 +136,15 @@ ul{
   margin: 0 auto;
   padding: 10px;
   background-size: cover;
-  margin-right: 130px;
+  margin-top: 200px;
 }
 
-.index{
-  background-image: url(http://cdn.mysitemyway.com/etc-mysitemyway/webtreats/assets/posts/1098/full/seamless-paper-patterns-6.jpg);
-  background-attachment:
-}
+
 
 .title{
   text-align: center;
-  margin-right: 300px;
-  margin-top: 50px;
+  margin-right: 10px;
+  margin-top: 150px;
 }
 
 .new{
@@ -114,6 +185,7 @@ ul{
 
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: #464646;
+  overflow-y: hidden;
 }
 
 .image-show{
@@ -136,12 +208,9 @@ ul{
 .search{
   text-align: center;
   margin-top: 300px;
-  margin-right: 250px;
 }
 
-header{
-  background-image: url(http://cdn1.theodysseyonline.com/files/2016/01/25/6358928084064937911009796574_concert.jpg);
-}
+
 header li{
   display: inline-block;
   margin: 20px;
@@ -163,179 +232,37 @@ header li{
 
 .enter{
   text-align: center;
-  margin-top: 100px;
-  margin-right: 300px;
+  margin-top: 150px;
 }
 
-.thumbnail{
-  margin-left: 50px;
-  margin-top:  25px;
-}
 
-.grid-10{
-  float: left;
-}
 
 .grid-22{
   float: left;
   margin-left: 70px;
 }
 
-.navbar-brand{
+
+
+
+
+
+
+
+
+/*.navbar-brand{
   color: white;
-}
+}*/
 
  body,html{
-   background-color: gray;
-   height: 1030px;
+   background-color: #eee;
+   height: 100%;
    font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+   overflow-x: hidden;
  }
 
  /* remove outer padding */
  .main .row{
    padding: 0px;
    margin: 0px;
- }
-
- /*Remove rounded coners*/
-
- nav.sidebar.navbar {
-   border-radius: 0px;
- }
-
- /*nav.sidebar, .main{
-   -webkit-transition: margin 200ms ease-out;
-     -moz-transition: margin 200ms ease-out;
-     -o-transition: margin 200ms ease-out;
-     transition: margin 200ms ease-out;
- }*/
-
- /* Add gap to nav and right windows.*/
- .main{
-   padding: 10px 10px 0 10px;
- }
-
- /* .....NavBar: Icon only with coloring/layout.....*/
-
- /*small/medium side display*/
- @media (min-width: 768px) {
-
-   /*Allow main to be next to Nav*/
-   .main{
-     position: absolute;
-     width: calc(100% - 40px); /*keeps 100% minus nav size*/
-     margin-left: 40px;
-     float: right;
-   }
-
-   /*lets nav bar to be showed on mouseover*/
-   nav.sidebar:hover + .main{
-     margin-left: 200px;
-   }
-
-   /*Center Brand*/
-   nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-     margin-left: 0px;
-   }
-   /*Center Brand*/
-   nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
-     text-align: center;
-     width: 100%;
-     margin-left: 0px;
-   }
-
-   /*Center Icons*/
-   nav.sidebar a{
-     padding-right: 13px;
-   }
-
-   /*adds border top to first nav box */
-   nav.sidebar .navbar-nav > li:first-child{
-     border-top: 1px #e5e5e5 solid;
-   }
-
-   /*adds border to bottom nav boxes*/
-   nav.sidebar .navbar-nav > li{
-     border-bottom: 1px #e5e5e5 solid;
-   }
-
-   /* Colors/style dropdown box*/
-   nav.sidebar .navbar-nav .open .dropdown-menu {
-     position: static;
-     float: none;
-     width: auto;
-     margin-top: 0;
-     background-color: transparent;
-     border: 0;
-     /*-webkit-box-shadow: none;
-     box-shadow: none;*/
-   }
-
-   /*allows nav box to use 100% width*/
-   nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
-     padding: 0 0px 0 0px;
-   }
-
-   /*colors dropdown box text */
-   .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-     color: #777;
-   }
-
-   /*gives sidebar width/height*/
-   nav.sidebar{
-     width: 100px;
-     height: 940px;
-     margin-left: -160px;
-     float: left;
-     z-index: 8000;
-     margin-bottom: 0px;
-   }
-
-   /*give sidebar 100% width;*/
-   nav.sidebar li {
-     width: 100%;
-     height: 75px;
-   }
-
-   /* Move nav to full on mouse over*/
-   nav.sidebar:hover{
-     margin-left: 0px;
-   }
-   /*for hiden things when navbar hidden*/
-   .forAnimate{
-     opacity: 0;
-   }
- }
-
- /* .....NavBar: Fully showing nav bar..... */
-
- @media (min-width: 1330px) {
-
-   /*Allow main to be next to Nav*/
-   .main{
-     width: calc(100% - 200px); /*keeps 100% minus nav size*/
-     margin-left: 200px;
-   }
-
-   /*Show all nav*/
-   nav.sidebar{
-     margin-left: 0px;
-     float: left;
-   }
-   /*Show hidden items on nav*/
-   nav.sidebar .forAnimate{
-     opacity: 1;
-   }
- }
-
- nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
-   color: #CCC;
-   background-color: transparent;
- }
-
- nav:hover .forAnimate{
-   opacity: 1;
- }
- section{
-   padding-left: 15px;
  }

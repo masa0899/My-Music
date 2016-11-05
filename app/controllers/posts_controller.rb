@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     Post.create(song_title: post_params[:song_title], singer: post_params[:singer], youtube_url: post_params[:youtube_url], text: post_params[:text], user_id: current_user.id)
+    redirect_to action: "index"
   end
 
   def show
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
     if post.user_id == current_user.id
       post.destroy
     end
+    redirect_to action: "index"
   end
 
   def edit
@@ -37,6 +39,7 @@ class PostsController < ApplicationController
     if post.user_id == current_user.id
       post.update(post_params)
     end
+    redirect_to action: "index"
   end
 
   def search

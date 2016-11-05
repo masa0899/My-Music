@@ -1,7 +1,10 @@
-<body class="index">
+<div class="contents clearfix">
+  <div class="right-content">
+    <p>TOP 10</p>
+  </div>
+<div class="center-content">
 <% @posts.each_with_index do |post, i| %>
-  <div class="grid-10">
-  <div class="thumbnail">
+  <div class="post-frame">
    <table>
     <tr>
     <td>
@@ -28,9 +31,23 @@
   <% end %>
   <%= link_to '詳細', "/posts/#{post.id}" %>
   </div>
-  </div>
 <% end %>
+</div>
+<% if user_signed_in? %>
+
+<div class="left-content">
+  <ul class="navgation">
+  <li class="lefnav"><a href="/"><span style="font-size:20px; color:gray;" class="pull-center hidden-xs showopacity glyphicon glyphicon-home">    Home</span></a></li>
+  <li class="lefnav"><a href=<%= user_path(current_user) %><span style="font-size:20px; color:gray;" class="pull-center hidden-xs showopacity glyphicon glyphicon-user">    My profile</span></a></li>
+  <li class="lefnav"><a href="/posts/search"><span style="font-size:20px; color:gray;" class="pull-center hidden-xs showopacity glyphicon glyphicon-search">    Search</span></a></li>
+</ul>
+<% end %>
+</div>
+</div>
+
+<footer>
 <%= paginate(@posts) %>
+</footer>
 <script>
   $(".like-button").on("click", function(){
     var heart = $(this).children('img');
@@ -67,5 +84,3 @@ function like_function(button, heart, heart_count, post_id){
   }
 }
 </script>
-
-</body>
