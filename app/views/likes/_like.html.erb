@@ -1,18 +1,22 @@
 <% if user_signed_in? %>
  <% if post.like_user(current_user.id) %>
-  <%= button_to "/posts/#{post.id}/unlike",params:{index: i}, method: :delete, id: i, remote: true do %>
-   <%= image_tag("icon_red_heart.svg") %>
-   <span>
+  <!-- <%= button_to "/posts/#{post.id}/unlike",params:{index: i}, method: :delete, class: 'like', data: {id: post.id} do %> -->
+  <div class="like-button">
+   <%= image_tag("icon_red_heart.svg", :id => post.id) %>
+   <span class="like-sum">
      <%= post.likes_count %>
    </span>
-  <% end %>
+ </div>
+  <!-- <% end %> -->
  <% else %>
-  <%= button_to "/posts/#{post.id}/like",params:{index: i} ,id: i, remote: true do %>
-   <%= image_tag("icon_heart.svg") %>
-   <span>
+  <!-- <%= button_to "/posts/#{post.id}/like",params:{index: i} ,class: 'like', data: {id: post.id} do %> -->
+  <div class="like-button">
+   <%= image_tag("icon_heart.svg", :id => post.id) %>
+   <span class="like-sum">
      <%= post.likes_count %>
    </span>
-  <% end %>
+ </div>
+  <!-- <% end %> -->
  <% end %>
 <% else %>
 <%= image_tag("icon_heart.svg") %>
