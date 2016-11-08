@@ -1,6 +1,35 @@
 <div class="contents clearfix">
   <div class="right-content">
-    <p>TOP 10</p>
+    <h2 class="ranking">~ TOP 3 ~</h2>
+    <% @posts_rank.each do |post_rank| %>
+      <div class="post-frame">
+       <table>
+        <tr>
+        <td>
+       <div class="image" style="background-image: url(<%= post_rank.user.avatar.url(:thumb) %>);"></div>
+     </td>
+     <td>
+       <p><%= post_rank.user.nickname %>さん</p>
+     </td>
+     </tr>
+     </table>
+
+       <p>曲名：<%= post_rank.song_title %><br>アーティスト名：<%= post_rank.singer %></p>
+      <div iframe-content>
+        <iframe class="embed-responsive-item" src="<%= post_rank.youtube_url %>"></iframe>
+      </div>
+      <p><%= post_rank.text %></p>
+
+      <%= render partial: "likes/like", locals: { post: post_rank} %>
+
+
+      <% if user_signed_in? && post_rank.user_id == current_user.id %>
+      <%= link_to '編集', "/posts/#{post_rank.id}/edit" %>
+       <%= link_to '削除', "/posts/#{post_rank.id}", method: :delete %>
+      <% end %>
+      <%= link_to '詳細', "/posts/#{post_rank.id}" %>
+      </div>
+    <% end %>
   </div>
 <div class="center-content">
 <% @posts.each_with_index do |post, i| %>

@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order('created_at DESC').page(params[:page]).per(6)
     @likes = Like.where(user_id: current_user)
+    @posts_rank = Post.all.order('likes_count DESC').limit(3)
   end
 
   def new

@@ -16,6 +16,14 @@
  *= require_self
  */
 /*ログイン画面*/
+.ranking{
+  text-align: center;
+}
+
+.user-edit{
+  margin-top: 200px;
+}
+
 .search_result{
   margin-top: 200px;
 }
@@ -50,13 +58,14 @@ header{
 }
 
 .right-content{
-  width: 300px;
+  width: 350px;
   float: right;
   background-color: white;
-  height: 1000px;
-  margin-top: 176px;
+  height: 100%;
+  /*margin-top: 176px;*/
   position: fixed;
-  right: 20px;
+  right: 0px;
+  overflow: auto;
 }
 
 .center-content{
