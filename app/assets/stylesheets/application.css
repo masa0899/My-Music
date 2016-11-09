@@ -16,6 +16,19 @@
  *= require_self
  */
 /*ログイン画面*/
+
+
+.pagina{
+  bottom: 10px;
+  width: 100%;
+  margin-left: 225px;
+}
+
+.my-post{
+  width: 1050px;
+  margin: 0 auto;
+}
+
 .ranking{
   text-align: center;
 }
@@ -101,6 +114,8 @@ footer{
 
 .show{
   width: 800px;
+  margin: 0 auto;
+  margin-top: 200px;
 }
 
 .finish{
