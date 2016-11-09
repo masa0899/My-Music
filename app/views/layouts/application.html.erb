@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MyMusic</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header>
-    <ul>
-    <li><a href="/"><%= image_tag("My Music-logo.png", :class => "logo") %></a></li>
-    <% if user_signed_in? %>
-           <li class="grid-6"><button type="button" class="btn btn-secondary"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button></li>
-           <li class="grid-6"><button type="button" class="btn btn-secondary"><a class="post" href="/posts/new">投稿する</a></button></li>
-    <% else %>
-            <li class="grid-6"><button type="button" class="btn btn-secondary"><%= link_to "ログイン", new_user_session_path, class: 'post' %></button></li>
-            <li class="grid-6"><button type="button" class="btn btn-secondary"><%= link_to "新規登録", new_user_registration_path, class: 'post' %></button></li>
-    <% end %>
-  </ul>
-  </header>
-<div class="main">
- <%= yield %>
-</div>
-</body>
+    <head>
+        <title>MyMusic</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li>
+                    <a href="/"><%= image_tag("My Music-logo.png", :class => "logo") %></a>
+                </li>
+                <% if user_signed_in? %>
+                <li class="grid-6">
+                    <button type="button" class="btn btn-secondary"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+                </li>
+                <li class="grid-6">
+                    <button type="button" class="btn btn-secondary">
+                        <a class="post" href="/posts/new">投稿する</a>
+                    </button>
+                </li>
+            <% else %>
+                <li class="grid-6">
+                    <button type="button" class="btn btn-secondary"><%= link_to "ログイン", new_user_session_path, class: 'post' %></button>
+                </li>
+                <li class="grid-6">
+                    <button type="button" class="btn btn-secondary"><%= link_to "新規登録", new_user_registration_path, class: 'post' %></button>
+                </li>
+                <% end %>
+            </ul>
+        </header>
+        <div class="main">
+            <%= yield %>
+        </div>
+    </body>
 </html>

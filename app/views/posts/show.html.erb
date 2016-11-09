@@ -1,29 +1,29 @@
 <div class="show">
-<p><%= @post.user.nickname %>さん</p>
-<p>曲名：<%= @post.song_title %><br>アーティスト名：<%= @post.singer %></p>
-<div iframe-content>
-<iframe class="embed-responsive-item" src="<%= @post.youtube_url %>"></iframe>
-</div>
-<p><%= @post.text %></p>
+    <p><%= @post.user.nickname %>さん</p>
+    <p>曲名：<%= @post.song_title %><br>アーティスト名：<%= @post.singer %></p>
+    <div iframe-content>
+        <iframe class="embed-responsive-item" src="<%= @post.youtube_url %>"></iframe>
+    </div>
+    <p><%= @post.text %></p>
 
+    <% if current_user %>
+    <ul>
+        <%= form_tag("/posts/#{@post.id}/comments", method: :post) do %>
+        <li>
+            <textarea cols="30" name="comment" placeholder="コメントする" rows="2" style="width:700px;"></textarea>
+        </li>
+        <li><input type="submit" value="SENT" style="width:700px"></li>
+        <% end %>
+    </ul>
+    <% end %>
 
-<% if current_user %>
-<ul>
-<%= form_tag("/posts/#{@post.id}/comments", method: :post) do %>
-<li><textarea cols="30" name="comment" placeholder="コメントする" rows="2" style="width:700px;"></textarea></li>
-<li><input type="submit" value="SENT" style="width:700px"></li>
-<% end %>
-</ul>
-<% end %>
-
-
-<h4>＜コメント一覧＞</h4>
-<% if @comments %>
-<% @comments.each do |comment| %>
-<p>
-<strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-<%= comment.comment %>
-</p>
-<% end %>
-<% end %>
+    <h4>＜コメント一覧＞</h4>
+    <% if @comments %>
+    <% @comments.each do |comment| %>
+    <p>
+        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+        <%= comment.comment %>
+    </p>
+    <% end %>
+    <% end %>
 </div>

@@ -1,65 +1,50 @@
-
 <div class="search_result">
-<h1>ビデオ - <%= link_to '投稿画面に戻る', "/posts/new" %></h1>
-  <% @videos.each_with_index do |video, i| %>
-  <div class="grid-22">
-    <div class="thumbnail" style="width: 330px;">
-  <p><%= video.snippet.title %></p>
-  <div id="console_log<%= i %>"></div>
-  <div iframe-content>
-  <iframe id="player<%= i %>" type="text/html" width="300" height="300"
-  src="http://www.youtube.com/embed/<%= video.id.videoId %>?enablejsapi=1"
-  frameborder="0"></iframe>
+    <h1>ビデオ -
+        <%= link_to '投稿画面に戻る', "/posts/new" %></h1>
+    <% @videos.each_with_index do |video, i| %>
+    <div class="grid-22">
+        <div class="thumbnail" style="width: 330px;">
+            <p><%= video.snippet.title %></p>
+            <div id="console_log<%= i %>"></div>
+            <div iframe-content>
+                <iframe id="player<%= i %>" type="text/html" width="300" height="300" src="http://www.youtube.com/embed/<%= video.id.videoId %>?enablejsapi=1" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <% end %>
 </div>
-</div>
-</div>
-  <% end %>
-</div>
-
 
 
 <script>
 
-var tag = document.createElement('script');
+    var tag = document.createElement('script');
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+    var player;
+    function onYouTubeIframeAPIReady() {
+        for (var i = 0; i <= 22; i++) {
+            player = new YT.Player('player' + i, {
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            });
+        }
+    }
 
-var player;
-function onYouTubeIframeAPIReady() {
-  for (var i = 0; i <= 22; i ++){
-   player = new YT.Player('player' + i, {
-   events: {
-     'onReady': onPlayerReady,
-    //  'onStateChange': onPlayerStateChange
-   }
- });
-}
-}
+    function onPlayerReady(event) {
+        for (var i = 0; i <= 22; i++) {
+            var embedCode = event.target.getVideoUrl()
+            if (event.target.getIframe().id == 'player' + i) {
+                console.log = function (log) {
+                    document.getElementById('console_log' + i).innerHTML += log + "<br>";
+                }
 
-
-function onPlayerReady(event) {
-  for (var i = 0; i <= 22; i ++){
-    var embedCode = event.target.getVideoUrl()
-       if (event.target.getIframe().id == 'player' + i){
-         console.log = function (log) {
-document.getElementById('console_log' + i).innerHTML += log + "<br>";
-}
-
-            console.log(embedCode);
-       }
-     };
-   }
-
-    //  var done = false;
-    //        function onPlayerStateChange(event) {
-    //          var embedCode = event.target.getVideoUrl()
-    //           if (document.getElementById('embed-code')) {
-    //             document.getElementById('embed-code').innerHTML = embedCode;
-    //             console.log(embedCode)
-    //           }
-    //          }
+                console.log(embedCode);
+            }
+        };
+    }
 
 </script>

@@ -1,43 +1,44 @@
 <div class="contents clearfix">
-<div class="my-profile">
-    <h2 class="nickname"><%= @nickname %>さんの投稿一覧</h2>
-    <div class="image-show" style="background-image: url(<%= @user.avatar.url(:medium) %>);"></div>
- <% if current_user.id ==  @user.id %>
-     <div class="profile_edit">
-       <%= link_to 'プロフィール編集', edit_user_path(current_user), {:class => 'btn btn-primary withripple' }%>
-      </div>
+    <div class="my-profile">
+        <h2 class="nickname"><%= @nickname %>さんの投稿一覧</h2>
+        <div class="image-show" style="background-image: url(<%= @user.avatar.url(:medium) %>);"></div>
+        <% if current_user.id ==  @user.id %>
+        <div class="profile_edit">
+            <%= link_to 'プロフィール編集', edit_user_path(current_user), {:class => 'btn btn-primary withripple' }%>
+        </div>
     </div>
     <% end %>
     <div class="my-post">
-    <% @posts.each do |post| %>
-      <div class="post-frame">
-       <table>
-        <tr>
-        <td>
-       <div class="image" style="background-image: url(<%= post.user.avatar.url(:thumb) %>);"></div>
-     </td>
-     <td>
-       <p><%= post.user.nickname %>さん</p>
-     </td>
-     </tr>
-     </table>
+        <% @posts.each do |post| %>
+        <div class="post-frame">
+            <table>
+                <tr>
+                    <td>
+                        <div class="image" style="background-image: url(<%= post.user.avatar.url(:thumb) %>);"></div>
+                    </td>
+                    <td>
+                        <p><%= post.user.nickname %>さん</p>
+                    </td>
+                </tr>
+            </table>
 
-       <p>曲名：<%= post.song_title %><br>アーティスト名：<%= post.singer %></p>
-      <div iframe-content>
-        <iframe class="embed-responsive-item" src="<%= post.youtube_url %>"></iframe>
-      </div>
-      <p><%= post.text %></p>
-
-      <%= render partial: "likes/like", locals: { post: post } %>
+            <p>曲名：<%= post.song_title %><br>アーティスト名：<%= post.singer %></p>
+            <div iframe-content>
+                <iframe class="embed-responsive-item" src="<%= post.youtube_url %>"></iframe>
+            </div>
+            <p><%= post.text %></p>
 
 
-      <%= link_to '編集', "/posts/#{post.id}/edit" %>
-       <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
-      <%= link_to '詳細', "/posts/#{post.id}" %>
-      </div>
-    <% end %>
-  </div>
+            <%= render partial: "likes/like", locals: { post: post } %>
+
+
+            <%= link_to '編集', "/posts/#{post.id}/edit" %>
+            <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+            <%= link_to '詳細', "/posts/#{post.id}" %>
+        </div>
+        <% end %>
+    </div>
 </div>
-    <footer class="pagina">
+<footer class="pagina">
     <%= paginate(@posts) %>
-  </footer>
+</footer>

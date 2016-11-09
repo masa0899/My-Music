@@ -1,14 +1,14 @@
 <body class="view">
-<div class="search">
-  <h1 class="music">お気に入りの音楽を見つけよう！</h1>
-<% flash.each do |key, value| %>
-<%= content_tag(:div, value, class: "#{key}") %>
-<% end %>
-<ul>
-<%= form_tag search_movie_posts_path do %>
-<li><%= text_field_tag :search_word, @search_word %></li>
-<li><%= submit_tag "search" %></li>
-<% end %>
-</ul>
-</div>
+    <div class="search">
+        <h1 class="music">お気に入りの音楽を見つけよう！</h1>
+        <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+        <% end %>
+        <ul>
+            <%= form_tag search_movie_posts_path do %>
+            <li><%= text_field_tag :search_word, @search_word %></li>
+            <li><%= submit_tag "search" %></li>
+            <% end %>
+        </ul>
+    </div>
 </body>

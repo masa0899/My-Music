@@ -15,278 +15,255 @@
  *= require_tree .
  *= require_self
  */
+
+
 /*ログイン画面*/
 
-
-.pagina{
-  bottom: 10px;
-  width: 100%;
-  margin-left: 225px;
+.pagina {
+    bottom: 10px;
+    width: 100%;
+    margin-left: 225px;
 }
 
-.my-post{
-  width: 1050px;
-  margin: 0 auto;
+.my-post {
+    width: 1050px;
+    margin: 0 auto;
 }
 
-.ranking{
-  text-align: center;
+.ranking {
+    text-align: center;
 }
 
-.user-edit{
-  margin-top: 200px;
+.user-edit {
+    margin-top: 200px;
 }
 
-.search_result{
-  margin-top: 200px;
+.search_result {
+    margin-top: 200px;
 }
 
-.left-content{
-  margin-top: 125px;
-  position: fixed;
-  left: 0px;
+.left-content {
+    margin-top: 125px;
+    position: fixed;
+    left: 0px;
 }
 
-.post-frame{
-  width: 325px;
-  background-color: white;
-  margin-top: 20px;
-  margin-left: 20px;
-  float: left;
+.post-frame {
+    width: 325px;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+    float: left;
 }
 
-header{
-  background-color: gray;
-  position: fixed;
-  top: 0px;
-  width: 100%;
+header {
+    background-color: gray;
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 
-.lefnav{
-  margin-top: 80px;
+.lefnav {
+    margin-top: 80px;
 }
 
-.navgation{
-  margin: 30px;
+.navgation {
+    margin: 30px;
 }
 
-.right-content{
-  width: 350px;
-  float: right;
-  background-color: white;
-  height: 100%;
-  /*margin-top: 176px;*/
-  position: fixed;
-  right: 0px;
-  overflow: auto;
+.right-content {
+    width: 350px;
+    float: right;
+    background-color: white;
+    height: 100%;
+    /*margin-top: 176px;*/
+    position: fixed;
+    right: 0px;
+    overflow: auto;
 }
 
-.center-content{
-  width: 700px;
-  float: right;
-  margin-right: 400px;
-  margin-top: 150px;
-  position: static;
+.center-content {
+    width: 700px;
+    float: right;
+    margin-right: 400px;
+    margin-top: 150px;
+    position: static;
 }
 
-.thumbnail-content{
-  width: 325px;
+.thumbnail-content {
+    width: 325px;
 }
 
 .clearfix:after {
-  content: "";
-  clear: both;
-  display: block;
+    content: "";
+    clear: both;
+    display: block;
 }
 
-footer{
-   bottom: 10px;
-   width: 100%;
-   margin-left: 350px;
+footer {
+    bottom: 10px;
+    width: 100%;
+    margin-left: 350px;
 }
 
-
-
-.logo{
-  width: 80%;
-  height: 80%;
+.logo {
+    width: 80%;
+    height: 80%;
 }
 
-.show{
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 200px;
+.show {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 200px;
 }
 
-.finish{
-  text-align: center;
-  margin-top: 50px;
+.finish {
+    text-align: center;
+    margin-top: 50px;
 }
 
-input{
-  width: 300px;
-  height: 50px;
-  margin-top: 10px;
+input {
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
 }
 
-textarea{
-  width: 300px;
+textarea {
+    width: 300px;
 }
 
-.post-view{
-  background-image: url(http://static.bnr.bg/gallery/4c/4c484236adc8aa922bf4019a074ea929.jpg);
-  background-position: center center;
-
-  /* 画像をタイル状に繰り返し表示しない */
-  background-repeat: no-repeat;
-
-  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
-  background-attachment: fixed;
-
-  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-  background-size: cover;
-
-  /* 背景画像が読み込まれる前に表示される背景のカラー */
-  background-color: #464646;
+.post-view {
+    background-image: url(http://static.bnr.bg/gallery/4c/4c484236adc8aa922bf4019a074ea929.jpg);
+    background-position: center center;
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
 }
 
-ul{
-  list-style: none;
+ul {
+    list-style: none;
 }
 
-.my-profile{
-  background-image: url(https://wordpress.com/wp-content/themes/a8c/verticals/music/images/header.jpg?m=1351292325h);
-  width: 1050px;
-  margin: 0 auto;
-  padding: 10px;
-  background-size: cover;
-  margin-top: 200px;
+.my-profile {
+    background-image: url(https://wordpress.com/wp-content/themes/a8c/verticals/music/images/header.jpg?m=1351292325h);
+    width: 1050px;
+    margin: 0 auto;
+    padding: 10px;
+    background-size: cover;
+    margin-top: 200px;
 }
 
-
-
-.title{
-  text-align: center;
-  margin-right: 10px;
-  margin-top: 150px;
+.title {
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 150px;
 }
 
-.new{
-  background-image: url(http://static.bnr.bg/gallery/4c/4c484236adc8aa922bf4019a074ea929.jpg);
-  background-position: center center;
-
-  /* 画像をタイル状に繰り返し表示しない */
-  background-repeat: no-repeat;
-
-  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
-  background-attachment: fixed;
-
-  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-  background-size: cover;
-
-  /* 背景画像が読み込まれる前に表示される背景のカラー */
-  background-color: #464646;
+.new {
+    background-image: url(http://static.bnr.bg/gallery/4c/4c484236adc8aa922bf4019a074ea929.jpg);
+    background-position: center center;
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
 }
 
-.music{
-  color: white;
-  font-weight: 900;
-  background:	rgba(0,0,0,0.4);
+.music {
+    color: white;
+    font-weight: 900;
+    background: rgba(0, 0, 0, 0.4);
 }
 
-.view{
-  background-image: url(http://imgphp2.flocku.com/images/article/CONTENT-2699.jpg);
-  background-position: center center;
-
-  /* 画像をタイル状に繰り返し表示しない */
-  background-repeat: no-repeat;
-
-  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
-  background-attachment: fixed;
-
-  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
-  background-size: cover;
-
-  /* 背景画像が読み込まれる前に表示される背景のカラー */
-  background-color: #464646;
-  overflow-y: hidden;
+.view {
+    background-image: url(http://imgphp2.flocku.com/images/article/CONTENT-2699.jpg);
+    background-position: center center;
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
+    overflow-y: hidden;
 }
 
-.image-show{
-  margin: 0 auto;
+.image-show {
+    margin: 0 auto;
 }
 
-.nickname{
-  text-align: center;
+.nickname {
+    text-align: center;
 }
 
-.profile_edit{
-  text-align: center;
+.profile_edit {
+    text-align: center;
 }
 
-.search-word{
-  width: 100px;
-  height: 50px;
+.search-word {
+    width: 100px;
+    height: 50px;
 }
 
-.search{
-  text-align: center;
-  margin-top: 300px;
+.search {
+    text-align: center;
+    margin-top: 300px;
 }
 
-
-header li{
-  display: inline-block;
-  margin: 20px;
+header li {
+    display: inline-block;
+    margin: 20px;
 }
 
-.image-show{
-  border-radius: 50%;
-  height: 200px;
-  width: 200px;
-  background-position: center;
+.image-show {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-position: center;
 }
 
-.image{
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  background-position: center;
+.image {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-position: center;
 }
 
-.enter{
-  text-align: center;
-  margin-top: 150px;
+.enter {
+    text-align: center;
+    margin-top: 150px;
 }
 
-
-
-.grid-22{
-  float: left;
-  margin-left: 70px;
+.grid-22 {
+    float: left;
+    margin-left: 70px;
 }
-
-
-
-
-
-
-
 
 
 /*.navbar-brand{
   color: white;
 }*/
 
- body,html{
-   background-color: #eee;
-   height: 100%;
-   font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
-   overflow-x: hidden;
- }
+body, html {
+    background-color: #eee;
+    height: 100%;
+    font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+    overflow-x: hidden;
+}
 
- /* remove outer padding */
- .main .row{
-   padding: 0px;
-   margin: 0px;
- }
+
+/* remove outer padding */
+
+.main .row {
+    padding: 0px;
+    margin: 0px;
+}

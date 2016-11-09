@@ -1,24 +1,24 @@
 <% if user_signed_in? %>
- <% if post.like_user(current_user.id) %>
-  <div class="like-button decrement">
-   <%= image_tag("icon_red_heart.svg", :id => post.id) %>
-   <span class="like-sum">
-     <%= post.likes_count %>
-   </span>
-  </div>
- <% else %>
-  <div class="like-button increament">
-   <%= image_tag("icon_heart.svg", :id => post.id) %>
-   <span class="like-sum">
-     <%= post.likes_count %>
-   </span>
-  </div>
- <% end %>
+<% if post.like_user(current_user.id) %>
+<div class="like-button decrement">
+    <%= image_tag("icon_red_heart.svg", :id => post.id) %>
+    <span class="like-sum">
+        <%= post.likes_count %>
+    </span>
+</div>
+<% else %>
+<div class="like-button increament">
+    <%= image_tag("icon_heart.svg", :id => post.id) %>
+    <span class="like-sum">
+        <%= post.likes_count %>
+    </span>
+</div>
+<% end %>
 <% else %>
 <div class="another">
-<%= image_tag("icon_heart.svg") %>
-<span>
-  <%= post.likes_count %>
-</span>
+    <%= image_tag("icon_heart.svg") %>
+    <span>
+        <%= post.likes_count %>
+    </span>
 </div>
 <% end %>

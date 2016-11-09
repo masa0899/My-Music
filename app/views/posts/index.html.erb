@@ -1,78 +1,92 @@
 <div class="contents clearfix">
 
-  <div class="right-content">
-    <h2 class="ranking">~ TOP 3 ~</h2>
-    <% @posts_rank.each do |post_rank| %>
-      <div class="post-frame">
-       <table>
-        <tr>
-        <td>
-       <div class="image" style="background-image: url(<%= post_rank.user.avatar.url(:thumb) %>);"></div>
-     </td>
-     <td>
-       <p><%= post_rank.user.nickname %>さん</p>
-     </td>
-     </tr>
-     </table>
-
-       <p>曲名：<%= post_rank.song_title %><br>アーティスト名：<%= post_rank.singer %></p>
-      <div iframe-content>
-        <iframe class="embed-responsive-item" src="<%= post_rank.youtube_url %>"></iframe>
-      </div>
-      <p><%= post_rank.text %></p>
-
-      <%= render partial: "likes/like", locals: { post: post_rank} %>
+    <div class="right-content">
+        <h2 class="ranking">~ TOP 3 ~</h2>
+        <% @posts_rank.each do |post_rank| %>
+        <div class="post-frame">
+            <table>
+                <tr>
+                    <td>
+                        <div class="image" style="background-image: url(<%= post_rank.user.avatar.url(:thumb) %>);"></div>
+                    </td>
+                    <td>
+                        <p><%= post_rank.user.nickname %>さん</p>
+                    </td>
+                </tr>
+            </table>
+            <p>曲名：<%= post_rank.song_title %><br>アーティスト名：<%= post_rank.singer %></p>
+            <div iframe-content>
+                <iframe class="embed-responsive-item" src="<%= post_rank.youtube_url %>"></iframe>
+            </div>
+            <p><%= post_rank.text %></p>
 
 
-      <% if user_signed_in? && post_rank.user_id == current_user.id %>
-      <%= link_to '編集', "/posts/#{post_rank.id}/edit" %>
-       <%= link_to '削除', "/posts/#{post_rank.id}", method: :delete %>
-      <% end %>
-      <%= link_to '詳細', "/posts/#{post_rank.id}" %>
-      </div>
+            <%= render partial: "likes/like", locals: { post: post_rank} %>
+
+
+            <% if user_signed_in? && post_rank.user_id == current_user.id %>
+            <%= link_to '編集', "/posts/#{post_rank.id}/edit" %>
+            <%= link_to '削除', "/posts/#{post_rank.id}", method: :delete %>
+            <% end %>
+            <%= link_to '詳細', "/posts/#{post_rank.id}" %>
+        </div>
+        <% end %>
+    </div>
+
+    <div class="center-content">
+        <% @posts.each do |post| %>
+        <div class="post-frame">
+            <table>
+                <tr>
+                    <td>
+                        <div class="image" style="background-image: url(<%= post.user.avatar.url(:thumb) %>);"></div>
+                    </td>
+                    <td>
+                        <p><%= post.user.nickname %>さん</p>
+                    </td>
+                </tr>
+            </table>
+            <p>曲名：<%= post.song_title %><br>アーティスト名：<%= post.singer %></p>
+            <div iframe-content>
+                <iframe class="embed-responsive-item" src="<%= post.youtube_url %>"></iframe>
+            </div>
+            <p><%= post.text %></p>
+
+
+            <%= render partial: "likes/like", locals: { post: post } %>
+
+
+            <% if user_signed_in? && post.user_id == current_user.id %>
+            <%= link_to '編集', "/posts/#{post.id}/edit" %>
+            <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+            <% end %>
+            <%= link_to '詳細', "/posts/#{post.id}" %>
+        </div>
+        <% end %>
+    </div>
+
+    <% if user_signed_in? %>
+    <div class="left-content">
+        <ul class="navgation">
+            <li class="lefnav">
+                <a href="/">
+                    <span style="font-size:20px; color:gray;" class="pull-center hidden-xs showopacity glyphicon glyphicon-home">
+                        Home</span>
+                </a>
+            </li>
+            <li class="lefnav">
+                <a <span href=<%= user_path(current_user) %> style="font-size:20px; color:gray;" class="pull-center hidden-xs showopacity glyphicon glyphicon-user">
+                    My profile</span>
+            </a>
+        </li>
+        <li class="lefnav">
+            <a href="/posts/search">
+                <span style="font-size:20px; color:gray;" class="pull-center hidden-xs showopacity glyphicon glyphicon-search">
+                    Search</span>
+            </a>
+        </li>
+    </ul>
     <% end %>
-  </div>
-
-<div class="center-content">
-<% @posts.each do |post| %>
-  <div class="post-frame">
-   <table>
-    <tr>
-    <td>
-   <div class="image" style="background-image: url(<%= post.user.avatar.url(:thumb) %>);"></div>
- </td>
- <td>
-   <p><%= post.user.nickname %>さん</p>
- </td>
- </tr>
- </table>
-
-   <p>曲名：<%= post.song_title %><br>アーティスト名：<%= post.singer %></p>
-  <div iframe-content>
-    <iframe class="embed-responsive-item" src="<%= post.youtube_url %>"></iframe>
-  </div>
-  <p><%= post.text %></p>
-
-  <%= render partial: "likes/like", locals: { post: post } %>
-
-
-  <% if user_signed_in? && post.user_id == current_user.id %>
-  <%= link_to '編集', "/posts/#{post.id}/edit" %>
-   <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
-  <% end %>
-  <%= link_to '詳細', "/posts/#{post.id}" %>
-  </div>
-<% end %>
-</div>
-<% if user_signed_in? %>
-
-<div class="left-content">
-  <ul class="navgation">
-  <li class="lefnav"><a href="/"><span style="font-size:20px; color:gray;" class="pull-center hidden-xs showopacity glyphicon glyphicon-home">    Home</span></a></li>
-  <li class="lefnav"><a href=<%= user_path(current_user) %><span style="font-size:20px; color:gray;" class="pull-center hidden-xs showopacity glyphicon glyphicon-user">    My profile</span></a></li>
-  <li class="lefnav"><a href="/posts/search"><span style="font-size:20px; color:gray;" class="pull-center hidden-xs showopacity glyphicon glyphicon-search">    Search</span></a></li>
-</ul>
-<% end %>
 </div>
 </div>
 
@@ -80,38 +94,42 @@
 <%= paginate(@posts) %>
 </footer>
 <script>
-  $(".like-button").on("click", function(){
+$(".like-button").on("click", function () {
     var heart = $(this).children('img');
     var heart_count = $(this).children('.like-sum');
     var post_id = $(this).children('img').attr('id');
     like_function($(this), heart, heart_count, post_id)
-  });
+});
 
-function like_function(button, heart, heart_count, post_id){
-  if (button.hasClass("decrement")){
-    $.ajax({
-      url: "/posts/" + post_id + "/unlike",
-      type: "delete",
-      data: {post_id: post_id, datatype: "json"}
-    })
-    .done(function(data){
-      button.removeClass("decrement").addClass("increament")
-      heart.attr("src", "/assets/icon_heart.svg")
-      heart_count.text(data["counts"]);
-    });
-    return false;
-  }else{
-    $.ajax({
-      url: "/posts/" + post_id + "/like",
-      type: "post",
-      data: {post_id: post_id, datatype: "json"}
-    })
-    .done(function(data){
-      button.removeClass("increment").addClass("decrement")
-      heart.attr("src", "/assets/icon_red_heart.svg")
-      heart_count.text(data["counts"]);
-    });
-    return false;
-  }
+function like_function(button, heart, heart_count, post_id) {
+    if (button.hasClass("decrement")) {
+        $.ajax({
+            url: "/posts/" + post_id + "/unlike",
+            type: "delete",
+            data: {
+                post_id: post_id,
+                datatype: "json"
+            }
+        }).done(function (data) {
+            button.removeClass("decrement").addClass("increament")
+            heart.attr("src", "/assets/icon_heart.svg")
+            heart_count.text(data["counts"]);
+        });
+        return false;
+    } else {
+        $.ajax({
+            url: "/posts/" + post_id + "/like",
+            type: "post",
+            data: {
+                post_id: post_id,
+                datatype: "json"
+            }
+        }).done(function (data) {
+            button.removeClass("increment").addClass("decrement")
+            heart.attr("src", "/assets/icon_red_heart.svg")
+            heart_count.text(data["counts"]);
+        });
+        return false;
+    }
 }
 </script>
